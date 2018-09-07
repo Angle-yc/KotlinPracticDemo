@@ -5,11 +5,8 @@
     android:layout_height="match_parent"
     tools:context="com.angle.hshb.kotlindemo.SecondActivity">
 
-    <TextView
-        android:id="@+id/tv_text"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="我是Second_Activity"
-        />
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 </RelativeLayout>

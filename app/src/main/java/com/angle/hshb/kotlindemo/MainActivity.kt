@@ -6,11 +6,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import com.angle.hshb.kotlindemo.bean.User
-import kotlinx.android.synthetic.main.activity_second.*
-import kotlin.coroutines.experimental.buildSequence
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     /**
@@ -36,17 +34,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tv_text?.text = "欢迎使用Kotlin，\n${getString("不为空返回")}\n$b"
-        if (tv_text == null){
-            System.out.print("tvText is null")
-        }
-        if (tv_text != null){
-            System.out.print("tvText is not null")
-        }
+        tv_text.text = "欢迎使用Kotlin，\n${getString("不为空返回")}\n$b"
         management = fragmentManager
         transaction = management?.beginTransaction()
         tv_text?.setOnClickListener {
-            var intent = Intent(this@MainActivity, SecondActivity::class.java);
+            var intent = Intent(this, SecondActivity::class.java);
             intent.putExtra("kotlin", "我是从MainActivity过来的")
             startActivity(intent)
         }
@@ -60,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         userClass()
         judge()
         filter()
+
     }
 
     fun whenUser(type : Int){
@@ -110,9 +103,9 @@ class MainActivity : AppCompatActivity() {
      * 得到一个泛型User的List
      */
     fun getUserList(): ArrayList<User> {
-        var userList: ArrayList<User> = ArrayList<User>()
+        var userList = ArrayList<User>()
         for (i in 1..9) {
-            var user: User = User("大黄"+(i+1), i + 1)
+            var user = User("大黄"+(i+1), i + 1)
             userList.add(user)
         }
         return userList
