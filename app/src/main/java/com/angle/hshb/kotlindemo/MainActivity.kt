@@ -9,6 +9,8 @@ import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import com.angle.hshb.kotlindemo.bean.User
+import kotlinx.android.synthetic.main.activity_second.*
+import kotlin.coroutines.experimental.buildSequence
 
 class MainActivity : AppCompatActivity() {
     /**
@@ -19,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
     var a: String = "不为空的字符串"
     var b = a.length
-    var tvText: TextView? = null
     var i: Int = 10
     var setBook = setOf("first", "secode", "three")
     var toast: Toast? = null
@@ -35,27 +36,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tvText = findViewById(R.id.tv_text) as TextView
-        tvText?.text = "欢迎使用Kotlin，\n${getString("不为空返回")}\n$b"
+        tv_text?.text = "欢迎使用Kotlin，\n${getString("不为空返回")}\n$b"
+        if (tv_text == null){
+            System.out.print("tvText is null")
+        }
+        if (tv_text != null){
+            System.out.print("tvText is not null")
+        }
         management = fragmentManager
         transaction = management?.beginTransaction()
-        tvText?.setOnClickListener {
+        tv_text?.setOnClickListener {
             var intent = Intent(this@MainActivity, SecondActivity::class.java);
             intent.putExtra("kotlin", "我是从MainActivity过来的")
             startActivity(intent)
         }
 
-//        ifStatement()
-//        forLoop()
-//        userIt()
-//        jumpForLoop()
-//        callBackUser()
-//        listForEach()
-//        userClass()
-//        judge()
-//        filter()
-
-
+        ifStatement()
+        forLoop()
+        userIt()
+        jumpForLoop()
+        callBackUser()
+        listForEach()
+        userClass()
+        judge()
+        filter()
     }
 
     fun whenUser(type : Int){

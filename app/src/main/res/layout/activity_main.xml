@@ -6,6 +6,7 @@
     tools:context="com.angle.hshb.kotlindemo.MainActivity">
 
     <TextView
+        android:text="I am  a TextView"
         android:id="@+id/tv_text"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
