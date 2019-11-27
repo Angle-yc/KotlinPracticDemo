@@ -1,4 +1,4 @@
-package com.angle.hshb.kotlindemo.bean
+package com.angle.kotlindemo.bean
 
 /**
  * Created by Administrator on 2017/8/17.

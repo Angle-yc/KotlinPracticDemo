@@ -1,6 +1,6 @@
 ext {
     supportLibrary = '26.1.0'
-    kotlinVersion = '1.1.2-4'
+    kotlinVersion = '1.3.50'
     ankoVersion="0.8.2"
 
     externalBuildGradlePlugin = "com.android.tools.build:gradle:3.0.1"
@@ -29,7 +29,7 @@ ext {
     externalGSON = 'com.google.code.gson:gson:2.8.0'
     externalEventBus = 'org.greenrobot:eventbus:3.1.1'
 
-    externalKotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    externalKotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     externalAnko =  "org.jetbrains.anko:anko-common:$ankoVersion"
 
     externalBuildToolsVersion = '26.0.1'
